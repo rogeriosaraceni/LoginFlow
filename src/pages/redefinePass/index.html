@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="pr-br">
+    <head>
+        <include src="partials/head.html"></include>
+    </head>
+
+    <body class="body-login">
+        <main class="main">
+            <section class="wrapper-form slide-in-left">
+                <article class="content">
+
+                    <include src="partials/logo-login.html"></include>
+
+                    <h6 class="text-left">Redefinir Senha</h6>
+
+                    <div class="text-left">
+                        <p class="mb-0">Nome: Fulano de Fulano</p>
+                        <p>Email: fulano@fulano.com</p>
+                    </div>
+
+                    <form data-js="form" method="POST" action="../messages/index.html">
+                        <div class="mb-3">
+                            <label>
+                                <input
+                                type="password"
+                                name="senha_atual"
+                                class="form-control pr-4"
+                                placeholder="senha atual"
+                                autocomplete="false"
+                                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                                required
+                                data-js="currentPass">
+
+                                <span class="btn-showPass" rel="tooltip" title="mostrar/esconder senha">
+                                    <i data-js="currentTogglePass" class="bi bi-lock"></i>
+                                </span>
+                            </label>
+
+                            <label>
+                                <input
+                                type="password"
+                                name="senha_nova"
+                                class="form-control pr-4"
+                                placeholder="nova senha"
+                                autocomplete="false"
+                                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                                required
+                                data-js="newPass">
+
+                                <span class="btn-showPass" rel="tooltip" title="mostrar/esconder senha">
+                                    <i data-js="newTogglePass" class="bi bi-lock"></i>
+                                </span>
+                            </label>
+
+                            <label>
+                                <input
+                                type="password"
+                                name="senha_confirmacao"
+                                class="form-control pr-4"
+                                placeholder="confirme a nova senha"
+                                autocomplete="false"
+                                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                                required
+                                data-js="newPassConfirm">
+
+                                <span class="btn-showPass" rel="tooltip" title="mostrar/esconder senha">
+                                    <i data-js="newTogglePassConfirm" class="bi bi-lock"></i>
+                                </span>
+                            </label>
+
+                            <small class="check-msg-current-new">Nova senha ter que ser diferente da atual!</small>
+                            <small class="check-msg-new-confirm">Senhas diferentes!</small>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary mb-2">Enviar</button>
+                        <input type="hidden" id="chave" name="chave" value="" />
+
+                        <div class="progress mb-2">
+                            <div
+                                data-progress="pass-strength"
+                                class="progress-bar"
+                                role="progressbar"
+                                aria-valuenow="40"
+                                aria-valuemin="0"
+                                aria-valuemax="100" style="width:0%">
+                            </div>
+                        </div>
+
+                        <div id="message" class="text-left mb-3">
+                            <b>Requisitos de senha:</b>
+                            <p data-valid="lowerCase" class="mb-0 invalid">1 letra minúscula</p>
+                            <p data-valid="upperCase" class="mb-0 invalid">1 letra maiúscula</p>
+                            <p data-valid="number" class="mb-0 invalid">1 número</p>
+                            <p data-valid="length" class="mb-0 invalid">Mínimo de 8 caracteres</p>
+                        </div>
+                    </form>
+
+                    <include src="partials/btnReturnLogin.html"></include>
+                </article>
+            </section>
+        </main>
+
+        <include src="partials/footer.html"></include>
+    </body>
+</html>

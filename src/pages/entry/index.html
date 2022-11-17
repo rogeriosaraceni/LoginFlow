@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="pr-br">
+    <head>
+        <include src="partials/head.html"></include>
+    </head>
+
+    <body class="body-login">
+        <main class="main">
+            <section class="wrapper-form slide-in-left">
+                <article class="content">
+
+                    <include src="partials/logo-login.html"></include>
+
+                    <p class="text-danger text-center p-1 border-bottom border-danger" style="display: none;">
+                        Acesso negado. Verifique seus dados e tente novamente!
+                    </p>
+
+                    <h6 class="text-left">Login</h6>
+
+                    <form method="post" action="#">
+                        <div class="mb-3">
+                            <label>
+                                <input
+                                type="email"
+                                name="email"
+                                class="form-control"
+                                placeholder="e-mail"
+                                pattern="^[\w]{1,}[\w.+-]{0,}@[\w-]{2,}([.][a-zA-Z]{2,}|[.][\w-]{2,}[.][a-zA-Z]{2,2})$"
+                                required>
+                            </label>
+
+                            <label>
+                                <input
+                                type="password"
+                                name="senha"
+                                class="form-control"
+                                placeholder="senha"
+                                required>
+
+                                <span class="btn-showPass" rel="tooltip" title="mostrar/esconder senha">
+                                    <i data-js="currentTogglePass" class="bi bi-lock"></i>
+                                </span>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Entrar</button>
+                    </form>
+
+                    <a class="d-flex align-items-center justify-content-center text-muted py-2 mt-2" href="../recoveryPass/index.html">
+                        <span>Esqueceu a senha?</span>
+                    </a>
+                </article>
+            </section>
+        </main>
+
+        <include src="partials/footer.html"></include>
+    </body>
+</html>

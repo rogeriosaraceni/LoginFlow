@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="pr-br">
+    <head>
+        <include src="partials/head.html"></include>
+    </head>
+
+    <body class="body-login">
+        <main class="main">
+            <section class="wrapper-form slide-in-left">
+                <article class="content">
+
+                    <include src="partials/logo-login.html"></include>
+
+                    <h6 class="text-left">Recuperação de Senha</h6>
+
+                    <form method="post" action="../messages/index.html">
+                        <div class="mb-3">
+                            <label>
+                                <input
+                                type="email"
+                                name="email"
+                                class="form-control"
+                                placeholder="e-mail"
+                                pattern="^[\w]{1,}[\w.+-]{0,}@[\w-]{2,}([.][a-zA-Z]{2,}|[.][\w-]{2,}[.][a-zA-Z]{2,2})$"
+                                required>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Enviar</button>
+                    </form>
+
+                    <include src="partials/btnReturnLogin.html"></include>
+                </article>
+            </section>
+        </main>
+
+        <include src="partials/footer.html"></include>
+    </body>
+</html>
